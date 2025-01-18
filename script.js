@@ -7,6 +7,7 @@ const generateTarget = () => {
     let randomInt = Math.floor(Math.random() * 10);
 
     return randomInt;
+    console.log(generateTarget());
 };
 
 const compareGuesses = (humanGuess, computerGuess, targetNumber) => {
@@ -18,6 +19,7 @@ const compareGuesses = (humanGuess, computerGuess, targetNumber) => {
     } else {
         return false;
     }
+
 };
 
 const updateScore = (winner) => {
@@ -26,4 +28,8 @@ const updateScore = (winner) => {
     } else {
         computerScore += 1;
     }
+};
+
+const advanceRound = () => {
+    currentRoundNumber += 1;
 };
