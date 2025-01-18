@@ -7,19 +7,23 @@ const generateTarget = () => {
     let randomInt = Math.floor(Math.random() * 10);
 
     return randomInt;
-    console.log(generateTarget());
 };
 
+const getAbsoluteDistance = (num1, num2) => {
+    return Math.abs(num1 - num2);
+};
 const compareGuesses = (humanGuess, computerGuess, targetNumber) => {
-    const humanDiff = Math.abs(targetNumber - humanGuess);
-    const computerDiff = Math.abs(targetNumber - computerGuess);
+    if (humanGuess < 0 || humanGuess > 9) {
+        alert("Number should between 0 and 9");
+    }
+    const humanDiff = getAbsoluteDistance(targetNumber, humanGuess);
+    const computerDiff = getAbsoluteDistance(targetNumber, computerGuess);
 
     if (humanDiff <= computerDiff) {
         return true;
     } else {
         return false;
     }
-
 };
 
 const updateScore = (winner) => {
